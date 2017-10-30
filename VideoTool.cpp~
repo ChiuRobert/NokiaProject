@@ -213,7 +213,7 @@ int main(int argc, char* argv[])
  
     //inet_pton(AF_INET,"193.226.12.217",&(servaddr.sin_addr));
  
-    connect(sockfd,(struct sockaddr *)&servaddr,sizeof(servaddr));
+    connect(sockfd,(struct sockaddr *)&servaddr,sizeof(servaddr)));
  
     while(1)
     {
