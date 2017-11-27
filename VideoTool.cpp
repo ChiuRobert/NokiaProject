@@ -15,8 +15,8 @@
 #include <strings.h>
 
 using namespace std;
+using namespace cv;
 
-//using namespace cv;
 //initial min and max HSV filter values.
 //these will be changed using trackbars
 int H_MIN = 162;
@@ -235,36 +235,6 @@ int main(int argc, char* argv[])
 {
 	//awesomeTelnet("193.226.12.217", "20232");
 
-    /*int sockfd,n;
-    char sendline[100];
-    char recvline[100];
-    struct sockaddr_in servaddr;
- 
-    sockfd=socket(AF_INET,SOCK_STREAM,0);
-
-    memset(&servaddr, '\0', sizeof (servaddr));
- 
-    servaddr.sin_addr.s_addr = inet_addr("193.226.12.217");
-    servaddr.sin_family=AF_INET;
-    servaddr.sin_port=htons(20232);
- 
-    //inet_pton(AF_INET,"193.226.12.217",&(servaddr.sin_addr));
- 
-    connect(sockfd,(struct sockaddr *)&servaddr,sizeof(servaddr));
- 
-    while(1)
-    {
-        bzero( sendline, 100);
-        bzero( recvline, 100);
-        fgets(sendline,100,stdin); //stdin = 0 , for standard input 
- 
-        write(sockfd,sendline,strlen(sendline)+1);
-        read(sockfd,recvline,100);
-        printf("%s",recvline);
-    } 
-*/
-
-
 	//some boolean variables for different functionality within this
 	//program
 	bool trackObjects = true;
@@ -293,10 +263,26 @@ int main(int argc, char* argv[])
 	//all of our operations will be performed within this loop
 
 
-	while (1) {
+    int sockfd,n;
+    char sendline[100];
+    char recvline[100];
+    struct sockaddr_in servaddr;
+ 
+    sockfd=socket(AF_INET,SOCK_STREAM,0);
 
-	printf("out\n");
-		//store image to matrix
+    memset(&servaddr, '\0', sizeof (servaddr));
+ 
+    servaddr.sin_addr.s_addr = inet_addr("193.226.12.217");
+    servaddr.sin_family=AF_INET;
+    servaddr.sin_port=htons(20232);
+ 
+    //inet_pton(AF_INET,"193.226.12.217",&(servaddr.sin_addr));
+ 
+    connect(sockfd,(struct sockaddr *)&servaddr,sizeof(servaddr));
+ 
+    while(1)
+    {
+//store image to matrix
 		capture.read(cameraFeed);
 		if(!cameraFeed.empty())
 		{
@@ -331,8 +317,15 @@ int main(int argc, char* argv[])
 			waitKey(30);
 		
 		}
-	}
 
+        bzero( sendline, 100);
+        bzero( recvline, 100);
+        fgets(sendline,100,stdin); //stdin = 0 , for standard input 
+ 
+        write(sockfd,sendline,strlen(sendline)+1);
+        read(sockfd,recvline,100);
+        printf("%s",recvline);
+    } 
 	return 0;
 }
 

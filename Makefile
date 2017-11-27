@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cloud/Scaune/NokiaProject
+CMAKE_SOURCE_DIR = /home/cloud/CupolaAgain/NokiaProject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cloud/Scaune/NokiaProject
+CMAKE_BINARY_DIR = /home/cloud/CupolaAgain/NokiaProject
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,9 +69,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cloud/Scaune/NokiaProject/CMakeFiles /home/cloud/Scaune/NokiaProject/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cloud/CupolaAgain/NokiaProject/CMakeFiles /home/cloud/CupolaAgain/NokiaProject/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cloud/Scaune/NokiaProject/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cloud/CupolaAgain/NokiaProject/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

@@ -1,1 +1,1 @@
-/home/cloud/Scaune/NokiaProject/CMakeFiles/VideoTool.dir
+/home/cloud/CupolaAgain/NokiaProject/CMakeFiles/VideoTool.dir
