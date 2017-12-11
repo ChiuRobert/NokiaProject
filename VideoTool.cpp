@@ -70,7 +70,7 @@ string intToString(int number) {
 	return ss.str();
 }
 
-void createTrackbars() {
+void createTrackbars(int H_MIN, int H_MAX, int S_MIN, int S_MAX, int V_MIN, int V_MAX, int trackbarNumber) {
 	//create window for trackbars
 
 
@@ -88,40 +88,24 @@ void createTrackbars() {
 	//the max value the trackbar can move (eg. H_HIGH),
 	//and the function that is called whenever the trackbar is moved(eg. on_trackbar)
 	//                                  ---->    ---->     ---->
-	createTrackbar("H_MIN", trackbarWindowName, &H_MIN, H_MAX, on_trackbar);
-	createTrackbar("H_MAX", trackbarWindowName, &H_MAX, H_MAX, on_trackbar);
-	createTrackbar("S_MIN", trackbarWindowName, &S_MIN, S_MAX, on_trackbar);
-	createTrackbar("S_MAX", trackbarWindowName, &S_MAX, S_MAX, on_trackbar);
-	createTrackbar("V_MIN", trackbarWindowName, &V_MIN, V_MAX, on_trackbar);
-	createTrackbar("V_MAX", trackbarWindowName, &V_MAX, V_MAX, on_trackbar);
+	char name[50];
+	sprintf(name, "H_MIN%d", trackbarNumber);
+	createTrackbar(name, trackbarWindowName, &H_MIN, H_MAX, on_trackbar);
 
+	sprintf(name, "H_MAX%d", trackbarNumber);
+	createTrackbar(name, trackbarWindowName, &H_MAX, H_MAX, on_trackbar);
 
-}
+	sprintf(name, "S_MIN%d", trackbarNumber);
+	createTrackbar(name, trackbarWindowName, &S_MIN, S_MAX, on_trackbar);
 
-void createTrackbars2() {
-	//create window for trackbars
+	sprintf(name, "S_MAX%d", trackbarNumber);
+	createTrackbar(name, trackbarWindowName, &S_MAX, S_MAX, on_trackbar);
 
+	sprintf(name, "V_MIN%d", trackbarNumber);
+	createTrackbar(name, trackbarWindowName, &V_MIN, V_MAX, on_trackbar);
 
-	namedWindow(trackbarWindowName, 0);
-	//create memory to store trackbar name on window
-	char TrackbarName[50];
-	sprintf(TrackbarName, "H_MIN", H_MIN2);
-	sprintf(TrackbarName, "H_MAX", H_MAX2);
-	sprintf(TrackbarName, "S_MIN", S_MIN2);
-	sprintf(TrackbarName, "S_MAX", S_MAX2);
-	sprintf(TrackbarName, "V_MIN", V_MIN2);
-	sprintf(TrackbarName, "V_MAX", V_MAX2);
-	//create trackbars and insert them into window
-	//3 parameters are: the address of the variable that is changing when the trackbar is moved(eg.H_LOW),
-	//the max value the trackbar can move (eg. H_HIGH),
-	//and the function that is called whenever the trackbar is moved(eg. on_trackbar)
-	//                                  ---->    ---->     ---->
-	createTrackbar("H_MIN2", trackbarWindowName, &H_MIN2, H_MAX2, on_trackbar);
-	createTrackbar("H_MAX2", trackbarWindowName, &H_MAX2, H_MAX2, on_trackbar);
-	createTrackbar("S_MIN2", trackbarWindowName, &S_MIN2, S_MAX2, on_trackbar);
-	createTrackbar("S_MAX2", trackbarWindowName, &S_MAX2, S_MAX2, on_trackbar);
-	createTrackbar("V_MIN2", trackbarWindowName, &V_MIN2, V_MAX2, on_trackbar);
-	createTrackbar("V_MAX2", trackbarWindowName, &V_MAX2, V_MAX2, on_trackbar);
+	sprintf(name, "V_MAX%d", trackbarNumber);
+	createTrackbar(name, trackbarWindowName, &V_MAX, V_MAX, on_trackbar);
 
 
 }
@@ -250,8 +234,8 @@ int main(int argc, char* argv[])
 	//x and y values for the location of the object
 	int x = 0, y = 0;
 	//create slider bars for HSV filtering
-	createTrackbars();
-	createTrackbars2();
+	createTrackbars(H_MIN, H_MAX, S_MIN, S_MAX, V_MIN, V_MAX, 1);
+	createTrackbars(H_MIN2, H_MAX2, S_MIN2, S_MAX2, V_MIN2, V_MAX2, 2);
 	//video capture object to acquire webcam feed
 	VideoCapture capture;
 	//open capture object at location zero (default location for webcam)

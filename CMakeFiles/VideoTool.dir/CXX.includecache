@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cloud/CupolaAgain/NokiaProject/VideoTool.cpp
+/home/cloud/FoaiaAlbastra/NokiaProject/VideoTool.cpp
 sstream
 -
 string
@@ -14,9 +14,9 @@ string
 iostream
 -
 opencv2/highgui/highgui.hpp
-/home/cloud/CupolaAgain/NokiaProject/opencv2/highgui/highgui.hpp
+/home/cloud/FoaiaAlbastra/NokiaProject/opencv2/highgui/highgui.hpp
 opencv2/opencv.hpp
-/home/cloud/CupolaAgain/NokiaProject/opencv2/opencv.hpp
+/home/cloud/FoaiaAlbastra/NokiaProject/opencv2/opencv.hpp
 sys/types.h
 -
 sys/socket.h

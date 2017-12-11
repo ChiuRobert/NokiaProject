@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cloud/CupolaAgain/NokiaProject/VideoTool.cpp" "/home/cloud/CupolaAgain/NokiaProject/CMakeFiles/VideoTool.dir/VideoTool.cpp.o"
+  "/home/cloud/FoaiaAlbastra/NokiaProject/VideoTool.cpp" "/home/cloud/FoaiaAlbastra/NokiaProject/CMakeFiles/VideoTool.dir/VideoTool.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
